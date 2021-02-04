@@ -20,6 +20,7 @@ NodeMCU | CCS811 | BME280 | SSD1306
 GND | GND | GND | GND |
 D1 | SCL | SCL | SCL |
 D2 | SDA | SDA | SDA |
+
 RGB LED with resistor between NodeMCU ground and cathode, other LED legs at D6, D7, D8.
 
 ### Notes:
@@ -41,6 +42,7 @@ Wifi KIT 8 | DHT11 | DS18B20
 GND | GND | GND |
 D1 | SCL | SCL |
 D2 | SDA | SDA | 
+
 Resistor between DS18B20 Data and VCC.
 
 ### Notes:
@@ -48,9 +50,13 @@ Even though even Heltec gives a link to [robotzero](https://robotzero.one/heltec
 
 ## Google Sheets
 
-<img src="/img/Freeform.jpg" width="50%">
-<img src="/img/data.jpg" width="50%">
-<img src="/img/hum.jpg" width="50%">
+<img src="/img/Freeform.png" width="50%">
+<img src="/img/data.png" width="50%">
+<img src="/img/hum.png" width="50%">
 
 ### Recommended reading:
+- [Mohit Bhoite](https://www.bhoite.com/sculptures/) makes some of the coolest freeform out there.
+- [Maarten Pennings](https://github.com/maarten-pennings/CCS811) has made a good overview of the CCS811 sensor. Also check discussions under Issues.
+- Setting up Google Sheets and your [script](https://www.electronics-lab.com/project/iot-log-sensor-data-google-sheet-using-nodemcu/). If I remember correctly then their arduino code does not work with the new libraries but the script part is nicely explained. 
+
 
