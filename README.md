@@ -5,7 +5,7 @@ IOT sensors around the house
 So I had a punch of IOT boards and sensors and decided to do a freeform weather station. Mainly was interested in indoor humidity and CO2 levels at night. I had previously done some weather stations on breadboards and had them send data to Blynk and Thingspeak but both had their pros and cons. I wanted to have my data saved and accessible from anywhere, more freedom to costumize how data is displayed and I wanted to do it for free. So I found out I can use google scripts to put data to sheets and I do not need any server or third party software for that. 
 
 ## Weather Station nr.1
-<img src="/img/co2.jpg" width="50%">
+<img src="/img/co2.jpg" width="75%">
 
 ### Hardware:
 - Wemos NodeMCU V3 ESP8266 dev board
@@ -28,7 +28,7 @@ It seems that HDC1080 does not give correct values, probably because it is too c
 
 
 ## Weather Station nr.2
-<img src="/img/kit8.jpg" width="50%">
+<img src="/img/kit8.jpg" width="75%">
 
 ### Hardware:
 - Wifi KIT 8 Heltec ESP8266 dev board
@@ -46,13 +46,15 @@ D2 | SDA | SDA |
 Resistor between DS18B20 Data and VCC.
 
 ### Notes:
-Even though even Heltec gives a link to [robotzero](https://robotzero.one/heltec-wifi-kit-8/) project on their homepage that uses U8g2 library, I had problems with it (For example flipping the screen) so I think [HelTecAutomation](https://github.com/HelTecAutomation/Heltec_ESP8266) works better. You only need to install it correctly first, which is not as straight forward as most libraries. If you have problems with DHT sensors, always check that you are not getting data to ofter (etc more than every 3s).
+Even though even Heltec gives a link to [robotzero](https://robotzero.one/heltec-wifi-kit-8/) project on their homepage that uses U8g2 library, I had problems with it (For example flipping the screen) so I think [HelTecAutomation](https://github.com/HelTecAutomation/Heltec_ESP8266) works better. You only need to install it correctly first, which is not as straight forward as most libraries. If you have problems with DHT sensors, always check that you are not getting data too often (etc more than every 3s).
 
 ## Google Sheets
 
-<img src="/img/Freeform.png" width="50%">
-<img src="/img/data.png" width="50%">
-<img src="/img/hum.png" width="50%">
+<img src="/img/Freeform.png" width="50%"><img src="/img/data.png" width="50%">
+
+<img src="/img/hum.png" width="75%">
+
+I have data coming from these 2 devices to tabs ("spreadsheets" or "sub-sheets" or...) Data1 and Data2, I can easily add more tabs and devices without breaking the system. Humidity, Temperature and CO2 tabs show corresponing graphs and the latest data is also updated in the "latest" tab.
 
 ### Recommended reading:
 - [Mohit Bhoite](https://www.bhoite.com/sculptures/) makes some of the coolest freeform out there.
