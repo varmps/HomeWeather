@@ -50,7 +50,8 @@ Even though even Heltec gives a link to [robotzero](https://robotzero.one/heltec
 
 ## Google Sheets
 
-<img src="/img/Freeform.png" width="50%"><img src="/img/data.png" width="50%">
+<img src="/img/Freeform.png" width="75%">
+<img src="/img/data.png" width="75%">
 
 <img src="/img/hum.png" width="75%">
 
