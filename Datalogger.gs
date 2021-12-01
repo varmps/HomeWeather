@@ -1,7 +1,8 @@
 // BY: Varmo Ernits
 // ON: 01.12.21
 // AT: github.
- 
+
+//Dont forget to insert your own google sheets ID - check down about copying the url of your sheets link 
  
 // Steps are valid as of 10.12.21
 // 0) From Google spreadsheet - Extensions - Apps Script
