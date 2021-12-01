@@ -49,6 +49,11 @@ Resistor between DS18B20 Data and VCC.
 Even though even Heltec gives a link to [robotzero](https://robotzero.one/heltec-wifi-kit-8/) project on their homepage that uses U8g2 library, I had problems with it (For example flipping the screen) so I think [HelTecAutomation](https://github.com/HelTecAutomation/Heltec_ESP8266) works better. You only need to install it correctly first, which is not as straight forward as most libraries. If you have problems with DHT sensors, always check that you are not getting data too often (etc more than every 3s).
 
 ## Google Sheets
+Have a Google Script added to the sheets and published as Webapp, so it gets data from both IOT devices through REST and then saves the data to Google Sheets. IOT devices are not 100% reliable and can sometimes stop sending data and then start doing it again, which means that there can be gaps in different time points. Even though every data package is saved with a timestamp, there are problems/limitations with sheets charts as time graphs give shifted graphs when one of the graphs has gaps. Graphs take the time for the x-axis (time) from one dataset and then the second dataset does not have an option for x-axis, which means that the data points of the second set are put on the same points with the first dataset. This is why I mostly check the "latest" tab for better overview.
+Some better explanations about sheets:
+[whatitmade](http://www.whatimade.today/log-unlimited-data-straight-to-google-sheets-from-a-bme280-temp/)
+[embedded-lab](https://embedded-lab.com/blog/post-data-google-sheets-using-esp8266/)
+and ofcourse [google own guides](https://developers.google.com/apps-script/guides/web)
 
 <img src="/img/Freeform.png" width="75%">
 <img src="/img/data.png" width="75%">
@@ -62,4 +67,5 @@ I have data coming from these 2 devices to tabs ("spreadsheets" or "sub-sheets" 
 - [Maarten Pennings](https://github.com/maarten-pennings/CCS811) has made a good overview of the CCS811 sensor. Also check discussions under Issues.
 - Setting up Google Sheets and your [script](https://www.electronics-lab.com/project/iot-log-sensor-data-google-sheet-using-nodemcu/). If I remember correctly then their arduino code does not work with the new libraries but the script part is nicely explained. 
 
-
+### Update:
+Ordered new BME280 boards, from 3 boards I ordered I got one BMP280 (thypical "scam" for cheap boards from aliexpress), one dead and one working BME280 that I changed with the faulty one I already had installed. Then I used the chance and updated the firmware of CCS811 to 2.0.1, which unfortunately did not make the measurements more stable. I do not reccomend this board. As the temp and humidity sensor values differentiate from one another quite a bit I decided to calibrate them and see if I could get some correction factors. I put all the sensors in a hermetically sealed box and made it as thermally stable as I could and added an extra thermistor for reference. Also added a bowl with saturated salt to the box for getting the 75% relative humidity value. DS18B20 ended up being the most accurate temperature sensor and DHT11 the most accurate humidity sensor. From data collected over a week I found that bme280 gave around 20% lower values, hdc1080 was very close on lower humidity values and behind on higher than 50% humidity. HDC1080 gave 5.3 deg higher, BME280 3.6 deg higher and DHT11 2.5 deg higher temperatures.
